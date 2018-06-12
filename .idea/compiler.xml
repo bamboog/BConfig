@@ -11,6 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Bconfig" target="1.5" />
       <module name="client" target="1.5" />
       <module name="parent_config" target="1.5" />
       <module name="server" target="1.5" />
