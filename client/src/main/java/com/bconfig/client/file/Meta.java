@@ -32,6 +32,23 @@ public class Meta {
         return fileName;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Meta)) return false;
+
+        Meta meta = (Meta) o;
+
+        return key.equals(meta.key);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return key.hashCode();
+    }
+
     public static String generateKey(String groupName, String fileName) {
         return groupName + "/" + fileName;
     }

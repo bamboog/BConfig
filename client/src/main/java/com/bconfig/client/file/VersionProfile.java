@@ -1,5 +1,7 @@
 package com.bconfig.client.file;
 
+import com.bconfig.client.constants.Constants;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -9,6 +11,9 @@ package com.bconfig.client.file;
  * 类描述 :
  */
 public class VersionProfile {
+    public static final String LOCAL_PROFILE = getLocalProfile();
+
+    public static final VersionProfile ABSENT = new VersionProfile(Constants.NO_FILE_VERSION, LOCAL_PROFILE);
 
     private final long version;
 
@@ -25,5 +30,30 @@ public class VersionProfile {
 
     public String getProfile() {
         return profile;
+    }
+
+
+    private static String getLocalProfile() {
+      return ""+":"+"";
+    }
+
+    public boolean needUpdate(VersionProfile versionProfile) {
+        if (versionProfile == null) {
+            return false;
+        }
+
+        if (versionProfile.getVersion() <= Constants.NO_FILE_VERSION) {
+            return false;
+        }
+
+        if (this == ABSENT) {
+            return true;
+        }
+
+        if (this.profile.equals(versionProfile.profile) && this.version >= versionProfile.version) {
+            return false;
+        }
+
+        return true;
     }
 }

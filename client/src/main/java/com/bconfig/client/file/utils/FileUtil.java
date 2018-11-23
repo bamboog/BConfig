@@ -2,7 +2,6 @@ package com.bconfig.client.file.utils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.function.Supplier;
 
 /**
  * Created by IntelliJ IDEA.

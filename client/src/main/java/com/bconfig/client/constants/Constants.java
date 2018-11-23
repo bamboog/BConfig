@@ -12,10 +12,11 @@ import java.nio.charset.Charset;
  * Time  : 下午10:18
  * 类描述 :
  */
-public class Constant {
+public class Constants {
 
 
     public static final String COMMA = ",";
     public static final Charset UTF_8 = Charset.forName("UTF-8");
     public static final Splitter COMMA_SPLITTER = Splitter.on(COMMA).omitEmptyStrings().trimResults();
+    public static final long NO_FILE_VERSION = -1;
 }
